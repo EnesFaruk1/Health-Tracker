@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnesFaruk_180201073.Pages.Index"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             Title="Index"
+             IconImageSource="index.png">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Orange">
+            <Label Text="Body Mass Index" FontSize="30" FontAttributes="Bold" TextColor="Green" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Index = Weight / (Height)²" TextColor="Black" FontSize="18" FontAttributes="Bold"  HorizontalTextAlignment="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Gender:" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                <input:RadioButtonGroupView Orientation="Horizontal"  >
+                    <input:RadioButton x:Name="Gender"     Text="Male"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                    <input:RadioButton x:Name="Gender1"    Text="Female" CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                </input:RadioButtonGroupView>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Height(cm):" FontAttributes="Bold"  FontSize="18" TextColor="Black"/>
+                <Entry Keyboard="Numeric" x:Name="Height_Txt" Text=""  WidthRequest="100"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Weight(kg): " FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                <Entry Keyboard="Numeric" x:Name="Weight_Txt" Text=""  WidthRequest="100"/>
+            </StackLayout>
+            <Button x:Name="But_Index_Calculate" WidthRequest="120" HorizontalOptions="Center" HeightRequest="50" Text="Calculate" TextColor="White" BackgroundColor="Red" FontAttributes="Bold" Clicked="But_Index_Calculate_Clicked"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Index :" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                <Label x:Name="Index_Txt" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="But_Body_Add" BackgroundColor="Red" Text="Add" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Body_Add_Clicked"/>
+                    <Button x:Name="But_Body_Show" BackgroundColor="Red" Text="Show" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Body_Show_Clicked"/>
+                </StackLayout>
+                <ListView x:Name="Index_List">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Person_ID }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Gender }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Gender1 }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Height }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Weight }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Body_Mass  }"/>
+                                    <Label Text="|"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Image Source="bodymass.jpg" WidthRequest="250" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="200" Margin="0,0,0,90"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

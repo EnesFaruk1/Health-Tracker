@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnesFaruk_180201073.Pages.Assessment"
+             IconImageSource="assessment.png"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             Title="Assessment">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Orange">
+            <Label Text="Health Assessment" FontSize="30" FontAttributes="Bold" TextColor="Green" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+            <StackLayout >
+                <Label Text="Do you smoke?" TextColor="Black" FontSize="18" FontAttributes="Bold"  HorizontalTextAlignment="Start"/>
+                <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <input:RadioButton x:Name="Smoke" HeightRequest="50"    Text="Yes"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                    <Label Text="                      "/>
+                    <input:RadioButton x:Name="Smoke1"    Text="No" CircleColor="Black" TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                </input:RadioButtonGroupView>
+            </StackLayout>
+            <Label Text="Do you use alcohol?" FontAttributes="Bold" TextColor="Black" FontSize="18"  HorizontalTextAlignment="Start"/>
+            <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <input:RadioButton x:Name="Alcohol"  HeightRequest="50"   Text="Yes"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                <Label Text="                      "/>
+                <input:RadioButton x:Name="Alcohol1"    Text="No" CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+            </input:RadioButtonGroupView>
+            <Label Text="How often do you do sports?" FontAttributes="Bold" TextColor="Black" FontSize="18"  HorizontalTextAlignment="Start"/>
+            <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <input:RadioButton x:Name="Sport"  HeightRequest="50"   Text="None"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                <Label Text="         "/>
+                <input:RadioButton x:Name="Sport1"    Text="1-3" CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                <Label Text="         "/>
+                <input:RadioButton x:Name="Sport2"  HeightRequest="50"  Text="4-6" CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+            </input:RadioButtonGroupView>
+            <Label Text="Do you have a chronic illness?" FontAttributes="Bold"  TextColor="Black" FontSize="18"  HorizontalTextAlignment="Start"/>
+            <Entry x:Name="Ilness_Txt"/>
+            <Button x:Name="But_Assessment" WidthRequest="115" HorizontalOptions="Center" HeightRequest="50" Text="Calculate" TextColor="White" BackgroundColor="Red" FontAttributes="Bold" Clicked="But_Assessment_Clicked"/>
+            <Label Text=""/>
+            <ProgressBar x:Name="progressBar" Progress="1.0" ProgressColor="White" HorizontalOptions="Center" HeightRequest="40" WidthRequest="400" BackgroundColor="Green" />
+            <Label Text=""/>
+            <Label Text="State of Health" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Green" FontSize="30" FontAttributes="Bold"/> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

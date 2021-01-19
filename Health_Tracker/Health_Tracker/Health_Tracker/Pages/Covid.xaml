@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnesFaruk_180201073.Pages.Covid"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             Title="Covid-19"
+             IconImageSource="mask.png">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Orange">
+            <Label Text="Covid-19 Assessment" FontSize="30" FontAttributes="Bold" TextColor="Green" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+            <Label Text=""/>
+            <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                    <Image Source="covid.jpg" WidthRequest="150" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0"/>
+                    <Image Source="masked.jpg" WidthRequest="150" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1"/>
+                </Grid>
+                <StackLayout >
+                    <Label Text="Do you infected?" TextColor="Black" FontSize="18" FontAttributes="Bold"  HorizontalTextAlignment="Start"/>
+                    <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <input:RadioButton x:Name="Infected" HeightRequest="50"    Text="Yes"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                        <Label Text="                      "/>
+                        <input:RadioButton x:Name="Infected1"    Text="No" CircleColor="Black" TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                    </input:RadioButtonGroupView>
+                </StackLayout>
+                <Label Text="Does anyone have a coronavirus around you?" FontAttributes="Bold" TextColor="Black" FontSize="18"  HorizontalTextAlignment="Start"/>
+                <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <input:RadioButton x:Name="Around"  HeightRequest="50"   Text="Yes"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                    <Label Text="                      "/>
+                    <input:RadioButton x:Name="Around1"    Text="No" CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                </input:RadioButtonGroupView>
+                <Label Text="Do you live in the risk zone?" FontAttributes="Bold" TextColor="Black" FontSize="18"  HorizontalTextAlignment="Start"/>
+                <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <input:RadioButton x:Name="RiskZone"   HeightRequest="50"   Text="Yes"   CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                    <Label Text="                      "/>
+                    <input:RadioButton x:Name="RiskZone1"    Text="No" CircleColor="Black"     TextFontSize="15" TextColor="Black" IsChecked="False"/>
+                </input:RadioButtonGroupView>
+                <Button x:Name="But_Covid_Result" BackgroundColor="Red" Grid.Row="3" Grid.Column="1" Text="Result" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Covid_Result_Clicked"/>
+                <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <input:RadioButton x:Name="Risk1"  HeightRequest="50"   Text="Risk Group"   CircleColor="Black"     TextFontSize="20" TextColor="Black" IsChecked="False"/>
+                    <Label Text="                      "/>
+                    <input:RadioButton x:Name="Risk2"    Text="Safe Group" CircleColor="Black" TextFontSize="20" TextColor="Black" IsChecked="False"/>
+                </input:RadioButtonGroupView>
+                <Label Text="!Go to hospital if you are in the Risk Group!" TextColor="Red" FontSize="18" FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

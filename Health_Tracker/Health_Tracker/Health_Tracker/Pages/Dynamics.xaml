@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnesFaruk_180201073.Pages.Dynamics"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             Title="Dynamics"
+             IconImageSource="person.png">
+    <ContentPage.Content>
+     <StackLayout BackgroundColor="Orange">
+            <Label Text="Body Dynamics" FontSize="30" FontAttributes="Bold" TextColor="Green" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+
+            <StackLayout Margin="0,0,0,80">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="water.jpg" Grid.Row="0" Grid.Column="0"/>
+                    <Button x:Name="But_Water_Decrease" Grid.Row="0" Grid.Column="1" Text="—" BackgroundColor="Green" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White" Clicked="But_Water_Decrease_Clicked"/>
+                    <Label x:Name="WaterIndex" Text="0" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" FontSize="40" VerticalOptions="Center"  TextColor="Black" FontAttributes="Bold"/>
+                    <Button x:Name="But_Water_Increase" Grid.Row="0" BackgroundColor="Green" Grid.Column="3" Text="+"  HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White" Clicked="But_Water_Increase_Clicked"/>
+                    <Label  Text="Glass" Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" FontSize="20" VerticalOptions="Center"  TextColor="Black" FontAttributes="Bold"/>
+
+                    <Image Source="sleep.jpg" Grid.Row="1" Grid.Column="0"/>
+                    <Button x:Name="But_Sleep_Decrease" Grid.Row="1" Grid.Column="1" Text="—"  HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" BackgroundColor="Green"  VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White" Clicked="But_Sleep_Decrease_Clicked"/>
+                    <Label x:Name="SleepIndex" Text="0" Grid.Row="1" TextColor="Black" Grid.Column="2" HorizontalOptions="Center" FontSize="40" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Button x:Name="But_Sleep_Increase" Grid.Row="1" BackgroundColor="Green" Grid.Column="3" Text="+"  HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White" Clicked="But_Sleep_Increase_Clicked"/>
+                    <Label  Text="Hours" Grid.Row="1" Grid.Column="4" HorizontalOptions="Center" FontSize="20" VerticalOptions="Center"  TextColor="Black" FontAttributes="Bold"/>
+                    <Image Source="blood.png" Grid.Row="2" Grid.Column="0"/>
+                    <Entry x:Name="Blood_Txt" HorizontalOptions="Center" WidthRequest="50" FontSize="25" VerticalOptions="Center"  Keyboard="Numeric" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="/" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" FontSize="40" VerticalOptions="Center"  TextColor="Black" FontAttributes="Bold"/>
+                    <Entry x:Name="Blood_Txt2" HorizontalOptions="Center" WidthRequest="40" FontSize="25" VerticalOptions="Center"  Keyboard="Numeric" Grid.Row="2" Grid.Column="3"/>
+                    <Label  Text="mmHg" Grid.Row="2" Grid.Column="4" HorizontalOptions="Center" FontSize="20" VerticalOptions="Center"  TextColor="Black" FontAttributes="Bold"/>
+                    <Button x:Name="But_Dyn_Add" BackgroundColor="Red" Grid.Row="3" Grid.Column="1" Text="Add" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Dyn_Add_Clicked"/>
+                    <Button x:Name="But_Dyn_Show" BackgroundColor="Red" Grid.Row="3" Grid.Column="3" Text="Show" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Dyn_Show_Clicked"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="Dynamic_List">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Person_ID }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Index_Water_Db }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Index_Sleep_Db }"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Index_Blood_Db }"/>
+                                    <Label Text="/"/>
+                                    <Label Text="{Binding Index_Blood2_Db }"/>
+                                    <Label Text="|"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

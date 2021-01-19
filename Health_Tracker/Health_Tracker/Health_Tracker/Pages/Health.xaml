@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnesFaruk_180201073.Pages.Health"
+             IconImageSource="heart.png"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             Title="Data">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Orange">
+            <Label Text="HEALTH   TRACKER" FontAttributes="Bold" TextColor="Green" FontSize="35"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name:         " FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="Name_Txt" WidthRequest="300"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Surname:    " FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="Surname_Txt" WidthRequest="300"/>
+             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Age:             " FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                <Entry Keyboard="Numeric" x:Name="Age_Txt"  WidthRequest="300"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="But_Per_Add" BackgroundColor="Red" Text="Add" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Per_Add_Clicked"/>
+                <Button x:Name="But_Per_Show" BackgroundColor="Red" Text="Show" HorizontalOptions="Center" WidthRequest="105" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="But_Per_Show_Clicked"/>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="User_List">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Person_ID}"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Fname}"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Lname}"/>
+                                    <Label Text="|"/>
+                                    <Label Text="{Binding Person_Age}"/>
+                                    <Label Text="|"/>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout>
+                    <Image Source="heartImage.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Take Care Be Healthy!" Margin="0,0,0,40" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Green" FontSize="30" FontAttributes="Bold"/>
+                </StackLayout>
+                
+            </StackLayout>
+                        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
